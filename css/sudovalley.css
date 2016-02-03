@@ -1,0 +1,10 @@
+html{
+  background: #f0f0f0;
+}
+header{
+  background: rgb(115, 201, 56);
+  height: 50px;
+}
+.calendar-container{
+  margin-top: 20px;
+}
