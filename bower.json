@@ -1,0 +1,31 @@
+{
+  "name": "sudovalley",
+  "version": "0.0.1",
+  "description": "Sudovalley landing page",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "Sudovalley",
+    "Startups"
+  ],
+  "authors": [
+    "@ByIvo",
+    "@Wmitrut"
+  ],
+  "license": "MIT",
+  "homepage": "sudovalley.github.io",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fullcalendar": "2.6",
+    "bootstrap": "3.3",
+    "underscore": "1.8"
+  }
+}

@@ -1,0 +1,2 @@
+# Ignore bower components; Run bower install to resolve dependencies
+components/*
