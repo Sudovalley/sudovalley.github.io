@@ -24,6 +24,7 @@
     "tests"
   ],
   "dependencies": {
+    "angular": "1.5",
     "fullcalendar": "2.6",
     "bootstrap": "3.3",
     "underscore": "1.8"

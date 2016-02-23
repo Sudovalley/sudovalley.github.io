@@ -1,0 +1,145 @@
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
+
+$primary-font: 'Roboto', sans-serif;
+$primary-color: #4D9e15;
+$background-color: #ececec;
+$light-primary-color: #A0E4AB;
+$contrast-color: #fff;
+$disable-color: #7f8c8d;
+$calendar-font: 'Fredoka One';
+
+body{
+  background: $background-color;
+}
+
+header{
+  background: $primary-color;
+  height: 50px;
+}
+
+
+label {
+  &.city-view {
+    font-family: $primary-font;
+    background-color: $disable-color;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.6em 2em;
+    color: $contrast-color;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: line-through;
+
+    &:before {
+      font-family: $calendar-font;
+      transition: all 0.4s ease;
+      content: 'x';
+      width: 30px;
+      font-size: 25px;
+      color: $contrast-color;
+      height: 100%;
+      background-color: $disable-color;
+      position: absolute;
+      top: 0px;
+      left:0;
+      opacity: 1;
+    }
+
+    &:after {
+      font-family: $calendar-font;
+      transition: all 0.4s ease;
+      content: 'v';
+      width: 30px;
+      font-size: 25px;
+      color: $contrast-color;
+      height:100%;
+      background-color: $primary-color;
+      position: absolute;
+      top: 0px;
+      left:100%;
+      opacity: 0;
+    }
+  }
+}
+
+@mixin hover-city-view-legend(){
+  left: 92%;
+  opacity: 1;
+}
+
+input {
+  &.city-checkbox {
+    display: none;
+
+    ~ label.city-view:hover:after {
+      @include hover-city-view-legend();
+    }
+
+    &:checked{
+      ~ label.city-view:hover:before {
+        @include hover-city-view-legend();
+      }
+
+      ~label.city-view {
+        background-color: $primary-color;
+        text-decoration: none;
+      }
+
+      ~ label.city-view:before {
+        left:100%;
+        opacity: 0;
+      }
+
+      ~ label.city-view:after {
+        left:0px;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+ul {
+  &.cities {
+    list-style: none;
+
+    li {
+      padding: 0.2em;
+    }
+  }
+}
+
+/*--------Header----------*/
+.header-landing{
+  background: $primary-color;
+  min-height: 300px;
+  margin-top: 0;
+  text-align: center;
+  vertical-align:middle;
+  margin: 0;
+  color: $contrast-color;
+}
+
+.subtitle{
+  font-family: $primary-font;
+  font-weight: 300;
+  color: $light-primary-color;
+  margin: 30px;
+
+}
+.logo_top{
+  max-width: 300px;
+  margin: 0;
+}
+.header-landing-minor{
+  background: $primary-color;
+  height: 60px;
+  width: 100%;
+}
+
+/*------Calendar-----*/
+.calendar-container{
+  margin-top: 20px;
+}

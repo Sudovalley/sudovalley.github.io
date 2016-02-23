@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
+body {
+  background: #ececec; }
+
+header {
+  background: #4D9e15;
+  height: 50px; }
+
+label.city-view {
+  font-family: "Roboto", sans-serif;
+  background-color: #7f8c8d;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.6em 2em;
+  color: #fff;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: line-through; }
+  label.city-view:before {
+    font-family: "Fredoka One";
+    transition: all 0.4s ease;
+    content: 'x';
+    width: 30px;
+    font-size: 25px;
+    color: #fff;
+    height: 100%;
+    background-color: #7f8c8d;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    opacity: 1; }
+  label.city-view:after {
+    font-family: "Fredoka One";
+    transition: all 0.4s ease;
+    content: 'v';
+    width: 30px;
+    font-size: 25px;
+    color: #fff;
+    height: 100%;
+    background-color: #4D9e15;
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    opacity: 0; }
+
+input.city-checkbox {
+  display: none; }
+  input.city-checkbox ~ label.city-view:hover:after {
+    left: 92%;
+    opacity: 1; }
+  input.city-checkbox:checked ~ label.city-view:hover:before {
+    left: 92%;
+    opacity: 1; }
+  input.city-checkbox:checked ~ label.city-view {
+    background-color: #4D9e15;
+    text-decoration: none; }
+  input.city-checkbox:checked ~ label.city-view:before {
+    left: 100%;
+    opacity: 0; }
+  input.city-checkbox:checked ~ label.city-view:after {
+    left: 0px;
+    opacity: 1; }
+
+ul.cities {
+  list-style: none; }
+  ul.cities li {
+    padding: 0.2em; }
+
+/*--------Header----------*/
+.header-landing {
+  background: #4D9e15;
+  min-height: 300px;
+  margin-top: 0;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0;
+  color: #fff; }
+
+.subtitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #A0E4AB;
+  margin: 30px; }
+
+.logo_top {
+  max-width: 300px;
+  margin: 0; }
+
+.header-landing-minor {
+  background: #4D9e15;
+  height: 60px;
+  width: 100%; }
+
+/*------Calendar-----*/
+.calendar-container {
+  margin-top: 20px; }
+
+/*# sourceMappingURL=sudovalley.css.map */

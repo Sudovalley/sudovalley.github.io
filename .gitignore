@@ -1,2 +1,11 @@
 # Ignore bower components; Run bower install to resolve dependencies
-components/*
+src/bower_components/*
+
+# Ignore Sass cache
+.sass-cache/*
+
+#Ignore node modules
+node_modules/*
+
+#Ignore dev test folder
+dev/*
