@@ -1,5 +1,4 @@
 angular.module('sudovalley').controller('CalendarController', function($scope, Event) {
-	alert('olá 2');
     $scope.event = Event;
 	$("#calendar").fullCalendar( {
 		header: {
