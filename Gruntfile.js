@@ -116,10 +116,11 @@ module.exports= function(grunt) {
   	uglify: {
         options: {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd hh-MM-ss") %> */',
-          sourceMap: true
+          sourceMap: true,
+          mangle: false
         },
         dist: {
-          src: ['dist/js/<%= pkg.name %>.js', 'dist/js/controllers/*.js', 'dist/js/services/*.js'],
+          src: ['dist/js/<%= pkg.name %>.js', 'dist/js/services/*.js', 'dist/js/controllers/*.js'],
           dest: 'dist/js/<%= pkg.name %>.min.js'
         }
       },
