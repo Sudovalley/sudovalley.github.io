@@ -71,7 +71,7 @@ ul.cities {
 
 /*--------Header----------*/
 .header-landing {
-  background: #4D9e15;
+  background: #73c938;
   min-height: 300px;
   margin-top: 0;
   text-align: center;
@@ -80,9 +80,9 @@ ul.cities {
   color: #fff; }
 
 .subtitle {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  color: #A0E4AB;
+  color: #a0e4ab;
   margin: 30px; }
 
 .logo_top {
@@ -90,12 +90,17 @@ ul.cities {
   margin: 0; }
 
 .header-landing-minor {
-  background: #4D9e15;
+  background: #4d9e15;
   height: 60px;
   width: 100%; }
 
 /*------Calendar-----*/
 .calendar-container {
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 2%;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px #aaaaaa; }
 
 /*# sourceMappingURL=sudovalley.css.map */
