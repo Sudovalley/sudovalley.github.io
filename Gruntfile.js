@@ -11,7 +11,7 @@ module.exports= function(grunt) {
         '**/jquery.min.js',
         '**/moment.min.js',
         '**/fullcalendar.min.js',
-        '**/pt-br.min.js',
+        '**/pt-br.js',
         '**/underscore-min.js'
     ],
 
