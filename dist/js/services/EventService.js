@@ -3,7 +3,7 @@ angular.module('sudovalley').service('Event', function() {
 	return {
 				filtered: function() {
 					return [{
-						title: 'meus ovo',
+						title: 'teste',
 						start: new Date(),
 						color: 'green'
 					 }];
