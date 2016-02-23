@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
 body {
   background: #ececec; }
 
@@ -20,7 +19,7 @@ label.city-view {
   cursor: pointer;
   text-decoration: line-through; }
   label.city-view:before {
-    font-family: "Fredoka One";
+    font-family: "Fredoka One", cursive;
     transition: all 0.4s ease;
     content: 'x';
     width: 30px;
@@ -33,7 +32,7 @@ label.city-view {
     left: 0;
     opacity: 1; }
   label.city-view:after {
-    font-family: "Fredoka One";
+    font-family: "Fredoka One", cursive;
     transition: all 0.4s ease;
     content: 'v';
     width: 30px;

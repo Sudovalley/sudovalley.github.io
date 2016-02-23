@@ -1,12 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
-
 $primary-font: 'Roboto', sans-serif;
 $primary-color: #4D9e15;
 $background-color: #ececec;
 $light-primary-color: #A0E4AB;
 $contrast-color: #fff;
 $disable-color: #7f8c8d;
-$calendar-font: 'Fredoka One';
+$calendar-font: 'Fredoka One', cursive;
 
 body{
   background: $background-color;
