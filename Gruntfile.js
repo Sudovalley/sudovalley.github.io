@@ -1,96 +1,35 @@
 module.exports= function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    stylesheetFiles: [
-        'src/**/fullcalendar.min.css',
-        'src/**/bootstrap.min.css',
-    ],
-
-    scriptFiles: [
-        '**/angular.min.js',
-        '**/jquery.min.js',
-        '**/moment.min.js',
-        '**/fullcalendar.min.js',
-        '**/pt-br.js',
-        '**/underscore-min.js'
-    ],
-
     copy: {
-      dev: {
-        cwd: 'src',
-        src: ['css/**/*', 'bower_components/**/*.css', 'js/**/*', 'bower_components/**/*.js', 'img/**/*', '*.html'],
-        dest: 'dev',
-        expand: true
-      },
-
       dist: {
         files: [
         {
-          cwd: 'src',
-          src: ['css/**/*', 'js/**/*', 'img/**/*'],
+          cwd: 'public',
+          src: ['**/*', '!vendor/**/*', '!scss/**/*', '!js/**/*'],
           dest: 'dist',
           expand: true
-        }, 
-        {
-          cwd: 'src',
-          src: ['<%= scriptFiles %>'],
-          dest: 'dist/js/vendor',
-          flatten: true,
-          filter: 'isFile',
-          expand: true
-        }
+        },
       ]
-      },
-
-      scripts: {
-        cwd: 'src',
-        src: ['js/**', 'bower_components/**/*.js'],
-        dest: 'dev',
-        expand: true
-      },
-
-      stylesheets: {
-        cwd: 'src',
-        src: ['css/**', 'bower_components/**/*.css'],
-        dest: 'dev',
-        expand: true
       }
     },
 
     clean: {
-      dev: {
-        src: ['dev/**']
-      },
-
       dist: {
         src: ['dist/**']
-      },
-
-      scripts: {
-        src: ['dev/js/**']
-      },
-
-      stylesheets: {
-        src: ['dev/css/**']
       }
     },
 
     sass: {
   		options: {
-  			sourceMap: true
+  			sourceMap: false
   		},
 
-  		dist: {
+  		build: {
   			files: {
-  				'dist/css/<%= pkg.name %>.css': 'dist/css/**/*.scss'
+  				'public/css/<%= pkg.name %>.css': 'public/scss/<%= pkg.name %>.scss'
   			}
-  		},
-
-      dev: {
-        files: {
-          'dev/css/<%= pkg.name %>.css': 'dev/css/**/*.scss'
-        }
-      }
+  		}
     },
 
     jshint: {
@@ -102,13 +41,12 @@ module.exports= function(grunt) {
 
     cssmin: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd hh-MM-ss") %> */\n',
-        sourceMap: true
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd hh-MM-ss") %> */\n'
       },
 
       dist: {
         files: {
-          'dist/css/<%= pkg.name %>.min.css' : ['<%= stylesheetFiles %>', 'dist/css/**/*.css']
+          'dist/css/<%= pkg.name %>.min.css' : 'dist/css/<%= pkg.name %>.css']
         }
       }
     },
@@ -127,7 +65,7 @@ module.exports= function(grunt) {
 
       htmlbuild: {
         dist: {
-          src: 'src/index.html',
+          src: 'public/index.html',
           dest: 'dist',
           relative: true,
           options: {
@@ -137,7 +75,7 @@ module.exports= function(grunt) {
             scripts: {
               bundle: {
                 cwd: 'dist/js',
-                files: ['<%= scriptFiles %>', '<%= pkg.name %>.min.js']
+                files: ['']
               }
             },
 
@@ -149,19 +87,14 @@ module.exports= function(grunt) {
       },
 
       watch: {
-        dev: {
-          files: ['src/**/*.html', 'src/img/*'],
-          tasks: 'dev'
-        },
-
         stylesheets: {
-          files: 'src/css/**/*.*css',
-          tasks: ['clean:stylesheets', 'copy:stylesheets','sass:dev']
+          files: 'public/scss/**/*.scss',
+          tasks: ['sass:build']
         },
 
         scripts: {
           files: 'src/js/**/*.js',
-          tasks: ['jshint', 'clean:scripts','copy:scripts']
+          tasks: ['jshint']
         }
       }
   });
@@ -175,6 +108,6 @@ module.exports= function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-html-build");
 
-  grunt.registerTask('dev', ['jshint', 'clean:dev', 'copy:dev', 'sass:dev']);
-  grunt.registerTask('dist', ['jshint', 'clean:dist', 'copy:dist', 'sass:dist','uglify:dist', 'cssmin:dist', 'htmlbuild:dist']);
+  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('dist', ['jshint', 'clean:dist', 'sass:dist', 'copy:dist', 'cssmin:dist', 'uglify:dist', 'htmlbuild:dist']);
 };

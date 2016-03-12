@@ -1,0 +1,40 @@
+
+
+body{
+  background: $background-color;
+}
+
+header{
+  background: $primary-color;
+  height: 50px;
+}
+
+/*--------Header----------*/
+.header-landing{
+  background: rgb(115, 201, 56);
+  min-height: 300px;
+  margin-top: 0;
+  text-align: center;
+  vertical-align:middle;
+  margin: 0;
+  color: #fff;
+}
+
+.subtitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: rgb(160, 228, 171);
+  margin:30px;
+
+}
+.logo_top{
+  max-width: 300px;
+  margin: 0;
+}
+.header-landing-minor{
+  background: rgb(77, 158, 21);
+  height: 60px;
+  width: 100%;
+}
+
+

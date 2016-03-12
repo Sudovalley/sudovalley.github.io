@@ -1,0 +1,92 @@
+@mixin hover-city-view-legend(){
+  left: 92%;
+  opacity: 1;
+}
+
+ul {
+  &.cities {
+    list-style: none;
+
+    li {
+      padding: 0.2em;
+
+      label {
+        &.city-view {
+          font-family: $primary-font;
+          background-color: $disable-color;
+          display: block;
+          width: 100%;
+          text-align: center;
+          padding: 0.6em 2em;
+          color: $contrast-color;
+          transition: all 0.4s ease;
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          text-decoration: line-through;
+
+          &:before {
+            font-family: $calendar-font;
+            transition: all 0.4s ease;
+            content: 'x';
+            width: 30px;
+            font-size: 25px;
+            color: $contrast-color;
+            height: 100%;
+            background-color: $disable-color;
+            position: absolute;
+            top: 0px;
+            left:0;
+            opacity: 1;
+          }
+
+          &:after {
+            font-family: $calendar-font;
+            transition: all 0.4s ease;
+            content: 'v';
+            width: 30px;
+            font-size: 25px;
+            color: $contrast-color;
+            height:100%;
+            background-color: $primary-color;
+            position: absolute;
+            top: 0px;
+            left:100%;
+            opacity: 0;
+          }
+        }
+      }
+
+      input {
+        &.city-checkbox {
+          display: none;
+
+          ~ label.city-view:hover:after {
+            @include hover-city-view-legend();
+          }
+
+          &:checked{
+            ~ label.city-view:hover:before {
+              @include hover-city-view-legend();
+            }
+
+            ~label.city-view {
+              background-color: $primary-color;
+              text-decoration: none;
+            }
+
+            ~ label.city-view:before {
+              left:100%;
+              opacity: 0;
+            }
+
+            ~ label.city-view:after {
+              left:0px;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
