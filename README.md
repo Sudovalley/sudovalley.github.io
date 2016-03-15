@@ -6,18 +6,26 @@
 * Grunt
 
 ### In first time, run:
-> _$> node install_ - **It will install all node tasks**
+```shell
+	node install
+```
+> **It will install all node tasks**
 
-> _$> bower install_ - **It will install all bower components**
+> In case of fail to bower install, manually executes:
+
+```shell
+	bower install
+``` 
+
+**It will install all bower components**
 
 #### To generate dist folder, run:
-> _$> grunt dist_
+```shell 
+grunt dist
+```
 
-#### To generate dev folder, run:
-> _$> grunt dev_
+#### To make grunt watch for changes and make a live reload, execute
 
-#### To make node watches to file's change, run (it affects only dev files):
-> _$> grunt watch_
-
-
-> **Obs: Change files in *src* and view the result on *dev* folder**
+```shell
+	grunt watch
+```
